@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="css/bootstrap.css">
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/jquery-3.6.3.min.js"></script>
 </head>
 <body>
+<audio src="lolAnnouncer.mp3" id="lol" loop="loop" autoplay="autoplay"></audio>
 <div class="container-fluid !direction !spacing">
     <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
         <div class="col-4 bg-primary">
@@ -25,12 +27,12 @@
 <div class="container text-center py-5">
     <h1 class="display-1">Estos alumnitos están aprendiendo Bootstrap 5</h1>
 </div>
+<script type="text/javascript">
+    window.onload=function(){
+        document.getElementById("lol").play();
+      }
+    </script>
 </body>
 
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function(event) {
-        let audio = new Audio('assets/lolAnnouncer.mp3');
-        audio.play();
-    });
-</script>
+
 </html>
