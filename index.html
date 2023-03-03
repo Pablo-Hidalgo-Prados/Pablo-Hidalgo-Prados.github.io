@@ -1,38 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Site</title>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="js/bootstrap.bundle.js"></script>
-  <script src="js/jquery-3.6.3.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Site</title>
+    <style>
+        /* Estilos para la ventana modal */
+        #ventana-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #ventana-modal-contenido {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* Estilos para el botón */
+        #boton-sonido {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #boton-sonido:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
 </head>
-<body>
-<audio src="lolAnnouncer.mp3" id="lol" muted="true" autoplay="true"></audio>
-<div class="container-fluid !direction !spacing">
-    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
-        <div class="col-4 bg-primary">
-            <p>col-4</p>
-        </div>
-        <div class="col-4 bg-secondary ">
-            <p>col-4</p>
-        </div>
-        <div class="col-4 bg-primary ">
-            <p>col-4</p>
+
+<body onload="mostrarVentana()">
+    <!-- Ventana modal -->
+    <div id="ventana-modal">
+        <div id="ventana-modal-contenido">
+            <h2>Bienvenido a mi sitio web</h2>
+            <p>Este es un ejemplo de ventana emergente personalizada con un botón que reproduce un sonido.</p>
+            <button id="boton-sonido">Reproducir sonido</button>
         </div>
     </div>
-</div>
-<div class="container text-center py-5">
-    <h1 class="display-1">Estos alumnitos están aprendiendo Bootstrap 5</h1>
-</div>
-<script type="text/javascript">
-    window.onload=function(){
-        document.getElementById("lol").play();
-      }
+    <div class="container-fluid !direction !spacing">
+        <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|}">
+            <div class="col-4 bg-primary">
+                <p>col-4</p>
+            </div>
+            <div class="col-4 bg-secondary ">
+                <p>col-4</p>
+            </div>
+            <div class="col-4 bg-primary ">
+                <p>col-4</p>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center py-5">
+        <h1 class="display-1">Estos alumnitos están aprendiendo Bootstrap 5</h1>
+    </div>
+    <script>
+
+        function mostrarVentana() {
+            document.getElementById("ventana-modal").style.display = "block";
+            document.getElementById("boton-sonido").addEventListener("click", playSound);
+        }
+
+        function playSound() {
+            var audio = new Audio('assets/lolAnnouncer.mp3');
+            audio.play();
+            document.getElementById("ventana-modal").style.display = "none";
+        };
     </script>
 </body>
-
 
 </html>
