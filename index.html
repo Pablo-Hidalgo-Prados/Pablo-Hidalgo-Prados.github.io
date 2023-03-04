@@ -98,37 +98,37 @@
     <div class="container text-center py-5">
         <h1 class="display-1">Estos alumnitos están aprendiendo Bootstrap 5</h1>
     </div>
-    <script>
-
-        // Obtener elementos de la página
-        var fondoModal = document.getElementById("fondo-modal");
-        var ventanaModal = document.getElementById("ventana-modal");
-        var botonSonido = document.getElementById("boton-sonido");
-
-        // Función para reproducir el sonido
-        function reproducirSonido() {
-            var audio = new Audio('assets/lolAnnouncer.mp3');
-            audio.play();
-            setTimeout(function () {
-                // Ocultar ventana modal con transición
-                fondoModal.classList.add("ocultar");
-                ventanaModal.classList.add("ocultar");
-            }, 500);
-        }
-
-        // Mostrar ventana modal y reproducir sonido al cargar la página
-        function mostrarVentana() {
-
-            setTimeout(function () {
-                // Ocultar ventana modal con transición
-                fondoModal.classList.add("mostrar");
-                ventanaModal.classList.add("mostrar");
-            }, 100);
-            botonSonido.addEventListener("click", function () {
-                reproducirSonido();
-            });
-        }
-    </script>
 </body>
+<script>
+
+    // Obtener elementos de la página
+    var fondoModal = document.getElementById("fondo-modal");
+    var ventanaModal = document.getElementById("ventana-modal");
+    var botonSonido = document.getElementById("boton-sonido");
+
+    // Función para reproducir el sonido
+    function reproducirSonido() {
+        var audio = new Audio('assets/lolAnnouncer.mp3');
+        audio.play();
+        setTimeout(function () {
+            // Ocultar ventana modal con transición
+            fondoModal.classList.add("ocultar");
+            ventanaModal.classList.add("ocultar");
+        }, 500);
+    }
+
+    // Mostrar ventana modal y reproducir sonido al cargar la página
+    function mostrarVentana() {
+
+        setTimeout(function () {
+            // Ocultar ventana modal con transición
+            fondoModal.classList.add("mostrar");
+            ventanaModal.classList.add("mostrar");
+        }, 100);
+        botonSonido.addEventListener("click", function () {
+            reproducirSonido();
+        });
+    }
+</script>
 
 </html>

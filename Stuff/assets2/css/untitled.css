@@ -1,0 +1,11 @@
+#titulo {
+  position: relative;
+  width: 100%;
+  margin-top: -5%;
+  margin-left: 5%;
+}
+
+#titulo .row {
+  width: 100%;
+}
+
